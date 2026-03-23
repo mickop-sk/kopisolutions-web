@@ -1,29 +1,24 @@
 <!DOCTYPE html>
-<html lang="sk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>Kopi Solutions | SAP Software Engineering & Architecture</title>
-    <meta name="description" content="Špecializovaný SAP inžiniersky dom. Navrhujeme a implementujeme technickú architektúru pre S/4HANA, ABAP OO, RAP a Cloud BTP riešenia.">
-    <meta name="keywords" content="SAP, ABAP, S/4HANA, RAP, CAP, BTP, Software Engineering, Architecture, Michal Kopčan">
+    <title>Kopi Solutions | SAP Lead Development & Technical Design</title>
+    <meta name="description" content="Specialized SAP engineering house focusing on S/4HANA technical design, ABAP OO, RAP, and Cloud BTP solutions.">
     
-    <meta property="og:title" content="Kopi Solutions | SAP Software Engineering & Architecture">
-    <meta property="og:description" content="Architecture-First prístup k vývoju SAP systémov. Od backendu po cloud.">
-    <meta property="og:image" content="https://kopisolutions.sk/logo.png">
-    <meta property="og:url" content="https://kopisolutions.sk">
-    <meta property="og:type" content="website">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --bg: #0f172a;
-            --card-bg: #1e293b;
-            --text-main: #f8fafc;
-            --text-dim: #94a3b8;
-            --accent: #06b6d4; /* Tyrkysová z tvojho loga */
-            --accent-glow: rgba(6, 182, 212, 0.2);
+            --bg: #ffffff;
+            --section-bg: #f8fafc; /* Veľmi jemná sivá pre odlíšenie sekcií */
+            --card-bg: #ffffff;
+            --text-main: #0f172a; /* Tmavá navy pre text */
+            --text-dim: #475569; /* Sivá pre popisy */
+            --accent: #06b6d4; /* Tvoja tyrkysová */
+            --border: #e2e8f0;
         }
 
         body {
@@ -35,153 +30,62 @@
             -webkit-font-smoothing: antialiased;
         }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
         /* HEADER */
-        header {
-            padding: 48px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-box img {
-            height: 70px;
-            width: auto;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-left: 30px;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--accent); }
+        header { padding: 50px 0 30px; border-bottom: 1px solid var(--border); }
+        .logo-box img { height: 60px; width: auto; }
 
         /* HERO */
-        .hero {
-            padding: 80px 0 120px;
-        }
-
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin: 0 0 24px;
-            line-height: 1.1;
-            letter-spacing: -0.03em;
-        }
-
+        .hero { padding: 100px 0 80px; }
+        .hero h1 { font-size: 3.8rem; font-weight: 800; margin: 0 0 24px; letter-spacing: -0.04em; line-height: 1.05; color: #1e293b; }
         .hero h1 span { color: var(--accent); }
+        .hero p { font-size: 1.3rem; color: var(--text-dim); max-width: 720px; margin-bottom: 40px; font-weight: 400; }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-dim);
-            max-width: 650px;
-            margin-bottom: 40px;
-        }
-
-        /* TECH STACK BAR */
         .tech-bar {
-            padding: 20px 0;
-            border-top: 1px solid #334155;
-            border-bottom: 1px solid #334155;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            color: var(--text-dim);
-            font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            display: flex; flex-wrap: wrap; gap: 15px;
+            color: var(--text-dim); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
         }
+        .tech-bar span { color: var(--accent); }
 
         /* SERVICES GRID */
-        .services {
-            padding: 100px 0;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+        .services { padding: 80px 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 12px; 
+            border: 1px solid var(--border); 
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
+        .card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1); }
+        .card h3 { font-size: 1.4rem; margin-top: 0; color: #1e293b; letter-spacing: -0.02em; }
+        .card p { color: var(--text-dim); font-size: 1rem; }
 
-        .card {
-            background: var(--card-bg);
-            padding: 48px;
-            border-radius: 16px;
-            border: 1px solid #334155;
-            transition: transform 0.3s, border-color 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            border-color: var(--accent);
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            color: var(--accent);
-        }
-
-        /* ARCHITECTURE SECTION */
-        .arch-section {
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            padding: 80px 60px;
-            border-radius: 24px;
-            margin-bottom: 100px;
-            border: 1px solid #334155;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .arch-section h2 { font-size: 2rem; margin-top: 0; }
-
-        .partnership {
-            margin-top: 40px;
-            padding-top: 40px;
-            border-top: 1px solid #334155;
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .partnership a {
-            color: var(--accent);
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.2rem;
-        }
+        /* PHILOSOPHY & PARTNERSHIP */
+        .focus-section { padding: 80px 48px; background: var(--section-bg); border-radius: 20px; border: 1px solid var(--border); margin: 40px 0; }
+        .focus-section h2 { font-size: 2.2rem; margin-top: 0; letter-spacing: -0.03em; color: #1e293b; }
+        .focus-section p { font-size: 1.1rem; color: var(--text-dim); }
+        
+        .partner-box { display: flex; align-items: center; gap: 24px; margin-top: 40px; padding-top: 40px; border-top: 1px solid var(--border); }
+        .partner-box span { color: var(--text-dim); font-size: 0.85rem; font-weight: 700; text-transform: uppercase; }
+        .partner-box img { height: 32px; filter: grayscale(1); opacity: 0.6; transition: 0.3s; }
+        .partner-box img:hover { filter: none; opacity: 1; }
 
         /* FOOTER */
-        footer {
-            padding: 80px 0 40px;
-            border-top: 1px solid #334155;
-            color: var(--text-dim);
-            font-size: 0.9rem;
-        }
+        footer { padding: 80px 0 50px; border-top: 1px solid var(--border); color: var(--text-dim); background-color: #ffffff; }
+        .footer-content { display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 40px; }
+        
+        .footer-col strong { color: #1e293b; display: block; margin-bottom: 12px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .footer-col a { color: var(--text-main); text-decoration: none; font-size: 1.3rem; font-weight: 800; transition: color 0.2s; }
+        .footer-col a:hover { color: var(--accent); }
+        
+        .social-link { font-size: 2rem; color: #1e293b; transition: 0.3s; }
+        .social-link:hover { color: var(--accent); }
 
-        .footer-grid {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-        }
+        .legal-info { margin-top: 60px; font-size: 0.8rem; opacity: 0.6; border-top: 1px solid var(--border); padding-top: 30px; line-height: 1.8; }
 
-        .contact-info a { color: var(--text-main); text-decoration: none; font-weight: 600; display: block; margin-top: 8px;}
-
-        .legal-info { font-size: 0.75rem; margin-top: 40px; opacity: 0.6; }
-
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .footer-grid { grid-template-columns: 1fr; }
-            header { flex-direction: column; gap: 20px; }
-            .nav-links a { margin: 0 10px; }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.8rem; } .footer-content { flex-direction: column; } }
     </style>
 </head>
 <body>
@@ -191,59 +95,66 @@
         <div class="logo-box">
             <img src="logo.svg" alt="Kopi Solutions Logo">
         </div>
-        <nav class="nav-links">
-            <a href="https://www.linkedin.com/in/michal-kopcan/" target="_blank">LinkedIn</a>
-            <a href="mailto:info@kopisolutions.sk">info@kopisolutions.sk</a>
-        </nav>
     </header>
 
     <section class="hero">
-        <h1>Architecture-First<br><span>SAP Engineering</span></h1>
-        <p>Navrhujeme technickú architektúru a implementujeme robustné riešenia pre S/4HANA ekosystémy. Inžiniersky prístup k softvéru, ktorý prežije generácie kódu.</p>
+        <h1>Lead Development <br>for <span>SAP Ecosystems</span></h1>
+        <p>Combining technical design with high-performance implementation. We build robust, scalable S/4HANA solutions that drive enterprise value.</p>
         <div class="tech-bar">
-            <span>ABAP OO</span> <span>RAP / CDS</span> <span>SAP BTP</span> <span>CAP Model</span> <span>Fiori UI5</span> <span>Workflow</span> <span>AI Dev-Ops</span>
+            <span>ABAP OO</span> • <span>RAP / CDS</span> • <span>SAP BTP</span> • <span>CAP</span> • <span>Fiori UI5</span> • <span>Workflow</span>
         </div>
     </section>
 
     <section class="services">
         <div class="card">
             <h3>Backend Engineering</h3>
-            <p>Vývoj vysoko-výkonnej logiky v ABAP OO a RAP. Špecializácia na čistú architektúru a OData rozhrania pre moduly MM, SD a FI.</p>
+            <p>Architecting and developing clean logic in ABAP OO and RAP. Specialized in high-throughput OData services for core SAP modules.</p>
         </div>
         <div class="card">
             <h3>Process Automation</h3>
-            <p>Návrh a realizácia automatizovaných tokov. Od klasických SAP Workflow až po moderné Flexible Workflow riešenia v S/4HANA.</p>
+            <p>From Classic SAP Workflow to Flexible S/4HANA Workflow. Designing automated paths that eliminate manual overhead.</p>
         </div>
         <div class="card">
-            <h3>Cloud Extensions</h3>
-            <p>Budovanie moderných aplikácií na platforme SAP BTP s využitím CAP (Cloud Application Programming) modelu a UI5.</p>
+            <h3>BTP & Cloud Dev</h3>
+            <p>Leveraging the SAP CAP model and UI5 to deliver modern, cloud-native extensions with technical integrity.</p>
         </div>
     </section>
 
-    <section class="arch-section">
-        <h2>Architecture-First Philosophy</h2>
-        <p>Veríme, že kvalitný kód začína precíznym dizajnom. Preberáme plnú zodpovednosť za technický návrh riešenia, čím eliminujeme technický dlh a zabezpečujeme škálovateľnosť vášho SAP prostredia.</p>
+    <section class="focus-section">
+        <h2>Technical Design First</h2>
+        <p>We believe that sustainable code starts with a sound technical architecture. As a Lead Developer, we take ownership of the design process to ensure every solution is future-proof and free from technical debt.</p>
         
-        <div class="partnership">
-            <span>Strategický partner:</span>
-            <a href="https://neoxx.sk" target="_blank">NEOXX.SK</a>
+        <div class="partner-box">
+            <span>Strategic Partner</span>
+            <a href="https://neoxx.sk" target="_blank">
+                <img src="neoxx.svg" alt="Neoxx Logo">
+            </a>
         </div>
     </section>
 
     <footer>
-        <div class="footer-grid">
-            <div class="contact-info">
-                <strong>Spojte sa s expertízou</strong>
+        <div class="footer-content">
+            <div class="footer-col">
+                <strong>Inquiries</strong>
                 <a href="mailto:info@kopisolutions.sk">info@kopisolutions.sk</a>
-                <a href="https://www.linkedin.com/in/michal-kopcan/" target="_blank">Michal Kopčan on LinkedIn &rarr;</a>
             </div>
-            <div style="text-align: right;">
-                <p>Kopi Solutions s.r.o.<br>SAP Software Engineering</p>
+            
+            <div class="footer-col">
+                <strong>Connect</strong>
+                <a href="YOUR_LINKEDIN_URL" target="_blank" class="social-link">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+
+            <div class="footer-col" style="text-align: right;">
+                <p><strong>Kopi Solutions s.r.o.</strong><br>SAP Software Engineering</p>
             </div>
         </div>
-        <div class="legal-info">
-            IČO: 54994837 | Sídlo: Komenského 501/22, 03301, Liptovský Hrádok   | Zapísané v Obchodnom registri SR.
-            <br>&copy; 2026 Kopi Solutions. Všetky práva vyhradené.
+
+       <div class="legal-info">
+            VAT ID: SK2121843042 | ID: 54994837 <br>
+            Registered Office: Komenského 501/22, 03301, Liptovský Hrádok <br>
+            &copy; 2026 Kopi Solutions. All rights reserved.
         </div>
     </footer>
 </div>
