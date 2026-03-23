@@ -33,8 +33,22 @@
         .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
 
         /* HEADER */
-        header { padding: 50px 0 30px; border-bottom: 1px solid var(--border); }
-        .logo-box img { height: 60px; width: auto; }
+        header { 
+            padding: 80px 0 50px; /* Pridali sme viac priestoru hore aj dole */
+            text-align: center; 
+            border-bottom: 1px solid var(--border); 
+        }
+        
+        .logo-box img { 
+            height: 100px; /* Zväčšené na 100px pre silnejší vizuálny dojem */
+            width: auto; 
+            transition: transform 0.3s ease;
+        }
+
+        /* Jemný efekt pri prejdení myšou (nepovinné) */
+        .logo-box img:hover {
+            transform: scale(1.02);
+        }
 
         /* HERO */
         .hero { padding: 100px 0 80px; }
