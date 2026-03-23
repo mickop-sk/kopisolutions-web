@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP Development & Technical Solutions</title>
+    <style>
+        :root {
+            --sap-blue: #0070f2;
+            --dark-navy: #001e3d;
+            --light-gray: #f4f7f9;
+            --text-dark: #333;
+        }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; color: var(--text-dark); line-height: 1.6; }
+        header { background: var(--dark-navy); color: white; padding: 100px 20px; text-align: center; }
+        header h1 { margin: 0; font-size: 2.5rem; letter-spacing: 1px; }
+        header p { font-size: 1.2rem; opacity: 0.9; margin-top: 10px; }
+        
+        .container { max-width: 1000px; margin: auto; padding: 40px 20px; }
+        section { padding: 60px 0; border-bottom: 1px solid #eee; }
+        h2 { color: var(--dark-navy); text-align: center; margin-bottom: 40px; }
+        
+        .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { background: var(--light-gray); padding: 30px; border-radius: 8px; border-left: 5px solid var(--sap-blue); }
+        .card h3 { margin-top: 0; color: var(--sap-blue); }
+
+        .ai-section { background: #eef5ff; padding: 40px; border-radius: 12px; text-align: center; }
+        .ai-badge { background: var(--sap-blue); color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; }
+
+        footer { background: var(--dark-navy); color: white; text-align: center; padding: 40px 20px; }
+        .contact-btn { background: var(--sap-blue); color: white; padding: 15px 30px; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>Expert SAP Development</h1>
+    <p>High-Performance Backend | Custom Fiori | S/4HANA Transformations</p>
+</header>
+
+<div class="container">
+    <section id="services">
+        <h2>Strategic Technical Services</h2>
+        <div class="services">
+            <div class="card">
+                <h3>Core ABAP & S/4HANA</h3>
+                <p>Robust backend development using ABAP OO, OData, and RAP. Specializing in S/4HANA Private & Public Cloud migrations.</p>
+            </div>
+            <div class="card">
+                <h3>Workflow Automation</h3>
+                <p>Streamlining business logic with Classic and Flexible Workflows across MM, SD, FI, and HR modules.</p>
+            </div>
+            <div class="card">
+                <h3>Custom Fiori/UI5</h3>
+                <p>Developing user-centric web applications and enhancing standard SAP processes for a seamless UX.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="ai-section">
+        <span class="ai-badge">AI-DRIVEN EFFICIENCY</span>
+        <h2>The Next Gen Development</h2>
+        <p>I leverage AI-assisted coding and SAP Joule frameworks to deliver clean, optimized code up to 30% faster. My focus is on the <strong>SAP CAP</strong> model and modern cloud-native architectures.</p>
+    </section>
+
+    <section id="industries">
+        <h2>Industry Experience</h2>
+        <p style="text-align: center;">Providing specialized technical consulting for market leaders in:</p>
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap; font-weight: bold; color: var(--dark-navy);">
+            <span>⚡ Energy & Utilities</span>
+            <span>🚗 Automotive</span>
+            <span>📱 Telecommunications</span>
+            <span>🏦 Finance</span>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <h2>Ready to optimize your SAP ecosystem?</h2>
+    <p>Available for B2B collaborations and technical audits.</p>
+    <br><br>
+    <a href="mailto:your.email@firm.com" class="contact-btn">Get in Touch</a>
+    <p style="margin-top: 50px; opacity: 0.6; font-size: 0.8rem;">© 2026 YourFirmName. All rights reserved. | Independent SAP Consulting</p>
+</footer>
+
+</body>
+</html>
